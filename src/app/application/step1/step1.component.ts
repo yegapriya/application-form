@@ -50,4 +50,7 @@ export class step1Component implements OnInit {
   goToStep2() {
     this.router.navigate(['/form/step2']); 
   }
+  goTologin() {
+    this.router.navigate(['']); 
+  }
 }
