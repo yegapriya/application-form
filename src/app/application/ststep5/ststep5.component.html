@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
         <h5>Upgrade Your Account</h5>
         <h3 style="text-align: center;">Details of Mark Qualification Examination</h3>
         <div class="grid p-fluid mt-3">
@@ -210,4 +210,221 @@
     <div class="button-row">
         <button class="btn next-btn">Back</button>
         <button class="btn submit-btn" (click)='goToStep6()'>Next</button>
-      </div>
+      </div> -->
+      <div class="card">
+        <h3 style="text-align: center;">Details of Mark Qualification Examination</h3>
+        <form [formGroup]="qualificationForm">
+            <div class="grid p-fluid mt-3">
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <p-dropdown
+                            inputId="ugStream"
+                            [autoDisplayFirst]="false"
+                            [options]="cities"
+                            formControlName="ugStream"
+                            optionLabel="name"
+                        ></p-dropdown>
+                        <label for="ugStream">UG Stream</label>
+                    </span>
+                </div>
+                <div class="field col-12">
+                    <h4>XI STD</h4>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-autoComplete
+                            inputId="mathsMarkXI"
+                            formControlName="mathsMarkXI"
+                            [suggestions]="filteredCountries"
+                            (completeMethod)="searchCountry($event)"
+                            field="name"
+                        ></p-autoComplete>
+                        <label for="mathsMarkXI">Maths Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="chemistryMarkXI"
+                            pInputText
+                            formControlName="chemistryMarkXI"
+                        />
+                        <label for="chemistryMarkXI">Chemistry Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="physicsMarkXI"
+                            pInputText
+                            formControlName="physicsMarkXI"
+                        />
+                        <label for="physicsMarkXI">Physics Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="totalMarkXI"
+                            pInputText
+                            formControlName="totalMarkXI"
+                        />
+                        <label for="totalMarkXI">Total Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12">
+                    <h4>XII STD</h4>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="mathsMarkXII" formControlName="mathsMarkXII"></p-chips>
+                        <label for="mathsMarkXII">Maths Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="chemistryMarkXII"
+                            pInputText
+                            formControlName="chemistryMarkXII"
+                        />
+                        <label for="chemistryMarkXII">Chemistry Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="physicsMarkXII" formControlName="physicsMarkXII"></p-chips>
+                        <label for="physicsMarkXII">Physics Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="totalMarkXII"
+                            pInputText
+                            formControlName="totalMarkXII"
+                        />
+                        <label for="totalMarkXII">Total Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12">
+                    <h4>For Pg Admission</h4>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="qualificationDegree"
+                            pInputText
+                            formControlName="qualificationDegree"
+                        />
+                        <label for="qualificationDegree">Qualification degree:</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input
+                            type="text"
+                            id="universityName"
+                            pInputText
+                            formControlName="universityName"
+                        />
+                        <label for="universityName">Name of the University</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="branch" formControlName="branch"></p-chips>
+                        <label for="branch">Branch</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="yearOfPassing" formControlName="yearOfPassing"></p-chips>
+                        <label for="yearOfPassing">Year of Passing</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="percentage" formControlName="percentage"></p-chips>
+                        <label for="percentage">% of Mark</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-dropdown
+                            inputId="modeOfStudy"
+                            [autoDisplayFirst]="false"
+                            [options]="study"
+                            formControlName="modeOfStudy"
+                            optionLabel="name"
+                        ></p-dropdown>
+                        <label for="modeOfStudy">Select Mode of Study</label>
+                    </span>
+                </div>
+                <div class="field col-12">
+                    <h4>Entrance Examination</h4>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-dropdown
+                            inputId="entranceExam"
+                            [autoDisplayFirst]="false"
+                            [options]="exam"
+                            formControlName="entranceExam"
+                            optionLabel="name"
+                        ></p-dropdown>
+                        <label for="entranceExam">Attended M.E/M.B.A Entrance Exam</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="gateScore" formControlName="gateScore"></p-chips>
+                        <label for="gateScore">GATE Score</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="consortiumExamScore" formControlName="consortiumExamScore"></p-chips>
+                        <label for="consortiumExamScore">Consortium Exam Score</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="tancetScore" formControlName="tancetScore"></p-chips>
+                        <label for="tancetScore">TANCET Score</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-chips inputId="yearOfPassingEntrance" formControlName="yearOfPassingEntrance"></p-chips>
+                        <label for="yearOfPassingEntrance">Year Of Passing</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-dropdown
+                            inputId="modeOfStudyEntrance"
+                            [autoDisplayFirst]="false"
+                            [options]="study"
+                            formControlName="modeOfStudyEntrance"
+                            optionLabel="name"
+                        ></p-dropdown>
+                        <label for="modeOfStudyEntrance">Select Mode Of Study</label>
+                    </span>
+                </div>
+            </div>
+        </form>
+        <div class="button-row">
+            <button class="btn next-btn" (click)="goToStep4()">Back</button>
+            <button class="btn submit-btn"  (click)="goToStep6()">Next</button>
+          </div>
+    </div>
+    
+      
+     
