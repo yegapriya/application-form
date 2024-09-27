@@ -47,6 +47,9 @@ export class Ststep4Component implements OnInit {
       country.name.toLowerCase().includes(query)
     );
   }
+  goToStep3() {
+    this.router.navigate(['/form/step3']); 
+  }
   goToStep5() {
     this.router.navigate(['/form/step5']); 
   }
