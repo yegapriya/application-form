@@ -84,9 +84,9 @@ export class Ststep5Component implements OnInit {
   }
   
   goToStep6() {
-    this.router.navigate(['/step6']); 
+    this.router.navigate(['/form/step6']); 
   }
   goToStep4() {
-    this.router.navigate(['/step4']); 
+    this.router.navigate(['/form/step4']); 
   }
 }
