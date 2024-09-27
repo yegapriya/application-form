@@ -1,0 +1,32 @@
+
+.button-row {
+    display: flex;
+    justify-content: end; /* Centers the buttons horizontally */
+    gap: 20px; /* Space between the buttons */
+    margin-top: 20px; /* Adds some top margin */
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #196bc3; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .next-btn {
+    color: black;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255); /* Green color for 'Next' button */
+  }
+  
+  .next-btn:hover {
+    background-color: #d3cfcf; /* Darker green on hover */
+  }

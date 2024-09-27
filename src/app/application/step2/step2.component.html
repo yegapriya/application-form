@@ -1,0 +1,141 @@
+
+
+
+
+
+
+<div class="card">
+  <div class="container text-center my-4">
+    <h2 style="color: rgb(10, 182, 182);" class="bg-warning text-black p-2">Personal Details</h2>
+  </div>
+  <div class="grid p-fluid mt-2">
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input type="text" id="firstName" pInputText [(ngModel)]="value1" />
+        <label for="firstName">First Name</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-autoComplete inputId="lastName" [(ngModel)]="value2" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
+        <label for="lastName">Last Name</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-12">
+      <span class="p-float-label">
+        <p-calendar inputId="dob" [(ngModel)]="value5"></p-calendar>
+        <label for="dob">Date Of Birth</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-chips inputId="age" [(ngModel)]="value6"></p-chips>
+        <label for="age">Age</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-dropdown inputId="gender" [autoDisplayFirst]="false" [options]="cities" [(ngModel)]="value10" optionLabel="name"></p-dropdown>
+        <label for="gender">Gender</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-12">
+      <span class="p-float-label">
+        <p-autoComplete inputId="email" [(ngModel)]="value2" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
+        <label for="email">Email Address</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-chips inputId="phone" [(ngModel)]="value6"></p-chips>
+        <label for="phone">Phone No</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-dropdown inputId="religion" [autoDisplayFirst]="false" [options]="cities" [(ngModel)]="value10" optionLabel="name"></p-dropdown>
+        <label for="religion">Select Religion</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-chips inputId="communityCert" [(ngModel)]="value6"></p-chips>
+        <label for="communityCert">Community Certificate No</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-dropdown inputId="community" [autoDisplayFirst]="false" [options]="cities" [(ngModel)]="value10" optionLabel="name"></p-dropdown>
+        <label for="community">Select Community</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-autoComplete inputId="aadhaar" [(ngModel)]="value2" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
+        <label for="aadhaar">Aadhar Card No</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-autoComplete inputId="pan" [(ngModel)]="value2" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
+        <label for="pan">Pan Card No</label>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="container text-center my-4">
+    <h2 style="color: rgb(10, 182, 182);" class="bg-warning text-black p-2">Address Details</h2>
+  </div>
+  <div class="grid p-fluid mt-2">
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="doorNo" pInputText [(ngModel)]="value1" />
+        <label for="doorNo">Door No</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="street" pInputText [(ngModel)]="value1" />
+        <label for="street">Street</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="village" pInputText [(ngModel)]="value1" />
+        <label for="village">Village</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="town" pInputText [(ngModel)]="value1" />
+        <label for="town">Town</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="taluk" pInputText [(ngModel)]="value1" />
+        <label for="taluk">Taluk Name</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input type="text" id="district" pInputText [(ngModel)]="value1" />
+        <label for="district">District</label>
+      </span>
+   </div>
+   <div class="field col-12 md:col-12">
+    <span class="p-float-label">
+        <p-calendar
+            inputId="calendar"
+            [(ngModel)]="value5"
+        ></p-calendar>
+        <label for="calendar">Date Of Joining</label>
+    </span>
+</div>
+
+<div class="button-row" style="margin-left: 900px;">
+  <button class="btn next-btn" >Back</button>
+  <button class="btn submit-btn" (click)='goToStep3()'>Next</button>
+</div>

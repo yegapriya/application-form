@@ -1,0 +1,132 @@
+<div class="card">
+    <h3 style="text-align: center;color: blue;">Academic details</h3>
+    <div class="field col-12 ">
+        <h4>X STD</h4>
+    </div>
+    <div class="grid p-fluid mt-3">
+        <div class="field col-12 " style="margin-top: -30px;">
+            <span class="p-float-label">
+                <input type="text" id="inputtext" pInputText [(ngModel)]="value1" /> 
+                <label for="inputtext">School name & address</label>
+            </span>
+        </div>
+        <div class="field col-12">
+            <span class="p-float-label">
+                <p-autoComplete
+                    inputId="autocomplete"
+                    [(ngModel)]="value2"
+                    [suggestions]="filteredCountries"
+                    (completeMethod)="searchCountry($event)"
+                    field="name"
+                ></p-autoComplete>
+                <label for="autocomplete">Registration Number</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="lefticon" pInputText [(ngModel)]="value3" />
+                <label for="lefticon">Year of Passing</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="righticon" pInputText [(ngModel)]="value4" />
+                <label for="righticon">Percentage Mark</label>
+            </span>
+        </div>
+        <div class="field col-12 ">
+            <h4>XI STD</h4>
+        </div>
+        <div class="field col-12 " style="margin-top: -30px;">
+            <span class="p-float-label">
+                <input type="text" id="inputtext" pInputText [(ngModel)]="value5" />
+                <label for="inputtext">School name & address</label>
+            </span>
+        </div>
+        <div class="field col-12">
+            <span class="p-float-label">
+                <p-autoComplete
+                    inputId="autocomplete"
+                    [(ngModel)]="value6"
+                    [suggestions]="filteredCountries"
+                    (completeMethod)="searchCountry($event)"
+                    field="name"
+                ></p-autoComplete>
+                <label for="autocomplete">Registration Number</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="lefticon" pInputText [(ngModel)]="value7" />
+                <label for="lefticon">Year of Passing</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="righticon" pInputText [(ngModel)]="value8" />
+                <label for="righticon">Percentage Mark</label>
+            </span>
+        </div>
+        <div class="field col-12 ">
+            <h4>XII STD</h4>
+        </div>
+        <div class="field col-12 " style="margin-top: -30px;">
+            <span class="p-float-label">
+                <input type="text" id="inputtext" pInputText [(ngModel)]="value9" />
+                <label for="inputtext">School name & address</label>
+            </span>
+        </div>
+        <div class="field col-12">
+            <span class="p-float-label">
+                <p-autoComplete
+                    inputId="autocomplete"
+                    [(ngModel)]="value13"
+                    [suggestions]="filteredCountries"
+                    (completeMethod)="searchCountry($event)"
+                    field="name"
+                ></p-autoComplete>
+                <label for="autocomplete">Registration Number</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="lefticon" pInputText [(ngModel)]="value11" />
+                <label for="lefticon">Year of Passing</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input type="text" id="righticon" pInputText [(ngModel)]="value12" />
+                <label for="righticon">Percentage Mark</label>
+            </span>
+        </div>
+        <div class="field col-12">
+            <span class="p-float-label">
+                <p-autoComplete
+                    inputId="autocomplete"
+                    [(ngModel)]="value14"
+                    [suggestions]="filteredCountries"
+                    (completeMethod)="searchCountry($event)"
+                    field="name"
+                ></p-autoComplete>
+                <label for="autocomplete">Qualification Exam</label>
+            </span>
+        </div>
+        <div class="field col-12 ">
+            <span class="p-float-label">
+                <p-dropdown
+                    inputId="dropdown"
+                    [autoDisplayFirst]="false"
+                    [options]="cities"
+                    [(ngModel)]="value10"
+                    optionLabel="name"
+                ></p-dropdown>
+                <label for="dropdown">Select medium of institution</label>
+            </span>
+        </div>
+    </div>
+    <div class="button-row">
+        <button class="btn next-btn">Back</button>
+        <button class="btn submit-btn" (click)='goToStep5()'>Next</button>
+      </div>
+</div>
