@@ -76,25 +76,56 @@ export class Step6Component implements OnInit {
   }
   onSubmit() {
     if (this.form.valid) {
-      console.log("Diploma Branch Studied:", this.form.get('value1')?.value);
-      console.log("Name of the Board:", this.form.get('value2')?.value);
-      console.log("% of Marks:", this.form.get('value3')?.value);
-      console.log("Sem-1:", this.form.get('value4')?.value);
-      console.log("Sem-2:", this.form.get('value5')?.value);
-      console.log("Sem-3:", this.form.get('value6')?.value);
-      console.log("Sem-4:", this.form.get('value7')?.value);
-      console.log("Sem-5:", this.form.get('value8')?.value);
-      console.log("Sem-6:", this.form.get('value9')?.value);
-      console.log("Sem-7:", this.form.get('value10')?.value);
-      console.log("Sem-8:", this.form.get('value11')?.value);
-      console.log("Name of the Bank:", this.form.get('value12')?.value);
-      console.log("Name of the Branch/Place:", this.form.get('value13')?.value);
-      console.log("Bank Account Number:", this.form.get('value14')?.value);
-      console.log("MICR Code of the Bank:", this.form.get('value15')?.value);
-      console.log("IFSC Code of the Bank:", this.form.get('value16')?.value);
+      const formData = {
+        diplomaBranchStudied: this.form.get('value1')?.value,
+        nameOfTheBoard: this.form.get('value2')?.value,
+        percentOfMarks: this.form.get('value3')?.value,
+        sem1: this.form.get('value4')?.value,
+        sem2: this.form.get('value5')?.value,
+        sem3: this.form.get('value6')?.value,
+        sem4: this.form.get('value7')?.value,
+        sem5: this.form.get('value8')?.value,
+        sem6: this.form.get('value9')?.value,
+        sem7: this.form.get('value10')?.value,
+        sem8: this.form.get('value11')?.value,
+        nameOfTheBank: this.form.get('value12')?.value,
+        nameOfTheBranch: this.form.get('value13')?.value,
+        bankAccountNumber: this.form.get('value14')?.value,
+        micrCode: this.form.get('value15')?.value,
+        ifscCode: this.form.get('value16')?.value
+      };
+  
+      // Save the form data to localStorage
+      localStorage.setItem('formData', JSON.stringify(formData));
+      
+      console.log('Form data saved to localStorage:', formData);
     } else {
       console.log('Form is not valid');
     }
   }
   
 }
+  // onSubmit() {
+  //   if (this.form.valid) {
+  //     console.log("Diploma Branch Studied:", this.form.get('value1')?.value);
+  //     console.log("Name of the Board:", this.form.get('value2')?.value);
+  //     console.log("% of Marks:", this.form.get('value3')?.value);
+  //     console.log("Sem-1:", this.form.get('value4')?.value);
+  //     console.log("Sem-2:", this.form.get('value5')?.value);
+  //     console.log("Sem-3:", this.form.get('value6')?.value);
+  //     console.log("Sem-4:", this.form.get('value7')?.value);
+  //     console.log("Sem-5:", this.form.get('value8')?.value);
+  //     console.log("Sem-6:", this.form.get('value9')?.value);
+  //     console.log("Sem-7:", this.form.get('value10')?.value);
+  //     console.log("Sem-8:", this.form.get('value11')?.value);
+  //     console.log("Name of the Bank:", this.form.get('value12')?.value);
+  //     console.log("Name of the Branch/Place:", this.form.get('value13')?.value);
+  //     console.log("Bank Account Number:", this.form.get('value14')?.value);
+  //     console.log("MICR Code of the Bank:", this.form.get('value15')?.value);
+  //     console.log("IFSC Code of the Bank:", this.form.get('value16')?.value);
+  //   } else {
+  //     console.log('Form is not valid');
+  //   }
+  // }
+  
+
