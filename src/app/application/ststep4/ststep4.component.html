@@ -1,132 +1,106 @@
-<div class="card">
-    <h3 style="text-align: center;">Academic details</h3>
-    <div class="field col-12 ">
-        <h4>X STD</h4>
-    </div>
-    <div class="grid p-fluid mt-3">
-        <div class="field col-12 " style="margin-top: -30px;">
-            <span class="p-float-label">
-                <input type="text" id="inputtext" pInputText [(ngModel)]="value1" /> 
-                <label for="inputtext">School name & address</label>
-            </span>
-        </div>
+<div  class="card" >
+    <form [formGroup]="step4Form">
+        <h3 style="text-align: center;">Academic details</h3>
+  
+        <!-- X STD -->
         <div class="field col-12">
+          <h4>X STD</h4>
+        </div>
+        <div class="grid p-fluid mt-3">
+          <div class="field col-12" style="margin-top: -30px;">
             <span class="p-float-label">
-                <p-autoComplete
-                    inputId="autocomplete"
-                    [(ngModel)]="value2"
-                    [suggestions]="filteredCountries"
-                    (completeMethod)="searchCountry($event)"
-                    field="name"
-                ></p-autoComplete>
-                <label for="autocomplete">Registration Number</label>
+              <input type="text" id="schoolX" pInputText formControlName="schoolX" />
+              <label for="schoolX">School name & address</label>
             </span>
-        </div>
-        <div class="field col-12 md:col-6">
+          </div>
+          <div class="field col-12">
             <span class="p-float-label">
-                <input type="text" id="lefticon" pInputText [(ngModel)]="value3" />
-                <label for="lefticon">Year of Passing</label>
+              <input type="text" id="regNoX" pInputText formControlName="regNoX" />
+              <label for="regNoX">Registration Number</label>
             </span>
-        </div>
-        <div class="field col-12 md:col-6">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <input type="text" id="righticon" pInputText [(ngModel)]="value4" />
-                <label for="righticon">Percentage Mark</label>
+              <input type="text" id="yearX" pInputText formControlName="yearX" />
+              <label for="yearX">Year of Passing</label>
             </span>
-        </div>
-        <div class="field col-12 ">
-            <h4>XI STD</h4>
-        </div>
-        <div class="field col-12 " style="margin-top: -30px;">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <input type="text" id="inputtext" pInputText [(ngModel)]="value5" />
-                <label for="inputtext">School name & address</label>
+              <input type="text" id="percentageX" pInputText formControlName="percentageX" />
+              <label for="percentageX">Percentage Mark</label>
             </span>
+          </div>
         </div>
+      
+        <!-- XI STD -->
         <div class="field col-12">
+          <h4>XI STD</h4>
+        </div>
+        <div class="grid p-fluid mt-3">
+          <div class="field col-12" style="margin-top: -30px;">
             <span class="p-float-label">
-                <p-autoComplete
-                    inputId="autocomplete"
-                    [(ngModel)]="value6"
-                    [suggestions]="filteredCountries"
-                    (completeMethod)="searchCountry($event)"
-                    field="name"
-                ></p-autoComplete>
-                <label for="autocomplete">Registration Number</label>
+              <input type="text" id="schoolXI" pInputText formControlName="schoolXI" />
+              <label for="schoolXI">School name & address</label>
             </span>
-        </div>
-        <div class="field col-12 md:col-6">
+          </div>
+          <div class="field col-12">
             <span class="p-float-label">
-                <input type="text" id="lefticon" pInputText [(ngModel)]="value7" />
-                <label for="lefticon">Year of Passing</label>
+              <input type="text" id="regNoXI" pInputText formControlName="regNoXI" />
+              <label for="regNoXI">Registration Number</label>
             </span>
-        </div>
-        <div class="field col-12 md:col-6">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <input type="text" id="righticon" pInputText [(ngModel)]="value8" />
-                <label for="righticon">Percentage Mark</label>
+              <input type="text" id="yearXI" pInputText formControlName="yearXI" />
+              <label for="yearXI">Year of Passing</label>
             </span>
-        </div>
-        <div class="field col-12 ">
-            <h4>XII STD</h4>
-        </div>
-        <div class="field col-12 " style="margin-top: -30px;">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <input type="text" id="inputtext" pInputText [(ngModel)]="value9" />
-                <label for="inputtext">School name & address</label>
+              <input type="text" id="percentageXI" pInputText formControlName="percentageXI" />
+              <label for="percentageXI">Percentage Mark</label>
             </span>
+          </div>
         </div>
+      
+        <!-- XII STD -->
         <div class="field col-12">
-            <span class="p-float-label">
-                <p-autoComplete
-                    inputId="autocomplete"
-                    [(ngModel)]="value13"
-                    [suggestions]="filteredCountries"
-                    (completeMethod)="searchCountry($event)"
-                    field="name"
-                ></p-autoComplete>
-                <label for="autocomplete">Registration Number</label>
-            </span>
+          <h4>XII STD</h4>
         </div>
-        <div class="field col-12 md:col-6">
+        <div class="grid p-fluid mt-3">
+          <div class="field col-12" style="margin-top: -30px;">
             <span class="p-float-label">
-                <input type="text" id="lefticon" pInputText [(ngModel)]="value11" />
-                <label for="lefticon">Year of Passing</label>
+              <input type="text" id="schoolXII" pInputText formControlName="schoolXII" />
+              <label for="schoolXII">School name & address</label>
             </span>
-        </div>
-        <div class="field col-12 md:col-6">
+          </div>
+          <div class="field col-12">
             <span class="p-float-label">
-                <input type="text" id="righticon" pInputText [(ngModel)]="value12" />
-                <label for="righticon">Percentage Mark</label>
+              <input type="text" id="regNoXII" pInputText formControlName="regNoXII" />
+              <label for="regNoXII">Registration Number</label>
             </span>
-        </div>
-        <div class="field col-12">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <p-autoComplete
-                    inputId="autocomplete"
-                    [(ngModel)]="value14"
-                    [suggestions]="filteredCountries"
-                    (completeMethod)="searchCountry($event)"
-                    field="name"
-                ></p-autoComplete>
-                <label for="autocomplete">Qualification Exam</label>
+              <input type="text" id="yearXII" pInputText formControlName="yearXII" />
+              <label for="yearXII">Year of Passing</label>
             </span>
-        </div>
-        <div class="field col-12 ">
+          </div>
+          <div class="field col-12 md:col-6">
             <span class="p-float-label">
-                <p-dropdown
-                    inputId="dropdown"
-                    [autoDisplayFirst]="false"
-                    [options]="cities"
-                    [(ngModel)]="value10"
-                    optionLabel="name"
-                ></p-dropdown>
-                <label for="dropdown">Select medium of institution</label>
+              <input type="text" id="percentageXII" pInputText formControlName="percentageXII" />
+              <label for="percentageXII">Percentage Mark</label>
             </span>
+          </div>
         </div>
-    </div>
-    <div class="button-row">
-        <button class="btn next-btn" (click)="goToStep3()">Back</button>
-        <button class="btn submit-btn" (click)="goToStep5()">Next</button>
-      </div>
-</div>
+      
+        <div class="button-row">
+          <button class="btn next-btn" (click)="goToStep3()">Back</button>
+          <button class="btn submit-btn"  (click)="goToStep5()">Next</button>
+        </div>
+
+    </form>
+    
+  </div>
+  

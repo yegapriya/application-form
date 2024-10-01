@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Import necessary classes
 import { CountryService } from 'src/app/demo/service/country.service';
 
 @Component({
@@ -18,24 +19,34 @@ export class Ststep4Component implements OnInit {
   ];
   filteredCountries: any[] = [];
 
-  // ngModel variables
-  value1: string; // Qualification degree
-  value2: string; // Maths mark for XI
-  value3: string; // Chemistry mark for XI
-  value4: string; // Physics mark for XI
-  value5: Date;   // Total marks for XI
-  value6: string[]; // Chips for XII Maths mark
-  value7: string; // Chemistry mark for XII
-  value8: string; // Physics mark for XII
-  value9: string; // Name of the University
-  value10: string; // Total mark for XII
-  value11: string[]; // Year of Passing
-  value12: string[]; // Entrance exam scores
-  value13: string[];
-  value14: string[];
-  constructor(private countryService: CountryService, private router:Router) {}
+  // Declare the form group
+  step4Form: FormGroup;
+
+  constructor(private countryService: CountryService, private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
+    // Initialize the form group with form controls
+    this.step4Form = this.formBuilder.group({
+      schoolX: ['', Validators.required],
+      regNoX: ['', Validators.required],
+      yearX: ['', Validators.required],
+      percentageX: ['', Validators.required],
+      schoolXI: ['', Validators.required],
+      regNoXI: ['', Validators.required],
+      yearXI: ['', Validators.required],
+      percentageXI: ['', Validators.required],
+      schoolXII: ['', Validators.required],
+      regNoXII: ['', Validators.required],
+      yearXII: ['', Validators.required],
+      percentageXII: ['', Validators.required]
+    });
+
+    // Check if data is in local storage and set it in the form
+    const savedFormData = localStorage.getItem('step4FormData');
+    if (savedFormData) {
+      this.step4Form.setValue(JSON.parse(savedFormData));
+    }
+
     this.countryService.getCountries().then(countries => {
       this.countries = countries;
     });
@@ -47,10 +58,24 @@ export class Ststep4Component implements OnInit {
       country.name.toLowerCase().includes(query)
     );
   }
+
   goToStep3() {
     this.router.navigate(['/form/step3']); 
   }
+
+  // Function to store form values in local storage, print form values in the console, and navigate to step 5
   goToStep5() {
-    this.router.navigate(['/form/step5']); 
+    if (this.step4Form.valid) {
+      // Store form values in local storage
+      localStorage.setItem('step4FormData', JSON.stringify(this.step4Form.value));
+
+      // Print form values to console
+      console.log('Form Values:', this.step4Form.value);
+
+      // Navigate to step 5
+      this.router.navigate(['/form/step5']); 
+    } else {
+      console.log('Form is invalid'); // Log message if form is invalid
+    }
   }
 }
