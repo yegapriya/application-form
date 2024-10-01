@@ -19,17 +19,16 @@ import { ChipsModule } from 'primeng/chips';
 export class Ststep5Component implements OnInit {
   countries: any[] = [];
   cities: any[] = [
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }
+    { name: 'Academic Stream', code: 'NY' },
+    { name: 'Vocational Stream', code: 'RM' },
   ];
+
+  
   
   study: any[] = [
-    { name: 'Online', code: 'NY' },
-    { name: 'Offline', code: 'RM' },
-    { name: 'Both', code: 'LDN' },
+    { name: 'Reguler', code: 'NY' },
+    { name: 'part time', code: 'RM' },
+    { name: 'Distance', code: 'LDN' },
   ];
 
   exam: any[] = [
@@ -80,13 +79,17 @@ export class Ststep5Component implements OnInit {
     const query = event.query.toLowerCase();
     this.filteredCountries = this.countries.filter(country => 
       country.name.toLowerCase().includes(query)
+      
     );
   }
   
   goToStep6() {
+    console.log(this.qualificationForm.value); // Log the form values to the console
     this.router.navigate(['/form/step6']); 
-  }
+}
+
   goToStep4() {
     this.router.navigate(['/form/step4']); 
   }
 }
+
