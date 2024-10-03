@@ -1,7 +1,4 @@
-
-
-
- <div class="card">
+<div class="card">
     <div class="container text-center my-4">
         <h2 class="bg-warning text-black p-2">Application Data</h2>
     </div>
@@ -59,9 +56,9 @@
                 </div>
                 <div class="field col-6">
                     <p-dropdown 
-                        [options]="cities" 
-                        formControlName="selectedDegree" 
-                        placeholder="SELECT THE DEGREE"
+                        [options]="admissionType" 
+                        formControlName="modeofadmission" 
+                        placeholder="MODE OF ADMISSION"
                         optionLabel="name"  
                         [showClear]="true">
                     </p-dropdown>
