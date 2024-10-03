@@ -1,55 +1,83 @@
 <div class="card">
-
-<div class="grid p-fluid mt-3">
-   
-  
-    <div class="field col-12">
-        <div class="container text-center my-4">
-            <h2 class="bg-warning text-black p-2">
-                Application Data
-            </h2>
+    <div class="container text-center my-4">
+        <h2 class="bg-warning text-black p-2">Application Data</h2>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="goToStep2()">
+        <div class="grid p-fluid mt-3">
+            <div class="field col-6">
+                <h5>Course</h5>
+                <p-dropdown 
+                    [options]="cities" 
+                    formControlName="selectedCourse" 
+                    placeholder="SELECT THE COURSE"
+                    optionLabel="name"  
+                    [showClear]="true">
+                </p-dropdown>
             </div>
-        <h5>Course</h5>
-        <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select the course" [showClear]="true"></p-dropdown>
-    </div>
-    <div class="field col-12">
-        <h5>Admission Type</h5>
-        <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select admission type" [showClear]="true"></p-dropdown>
-    </div>
-    <div class="field col-12">
-        <h5>Select The Degree</h5>
-        <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select the degree" [showClear]="true"></p-dropdown>
-    </div>
+            <div class="field col-6">
+                <h5>Admission Type</h5>
+                <p-dropdown 
+                    [options]="admissionType" 
+                    formControlName="selectedAdmissionType" 
+                    placeholder="SELECT THE ADMISSION TYPE" 
+                    optionLabel="name" 
+                    [showClear]="true">
+                </p-dropdown>
+            </div>
+            
+            <div class="field col-12">
+                <h5>Select The Degree</h5>
+                <p-dropdown 
+                    [options]="cities" 
+                    formControlName="selectedDegree" 
+                    placeholder="SELECT THE DEGREE" 
+                    optionLabel="name" 
+                    [showClear]="true">
+                </p-dropdown>
+            </div>
+        </div>
+
+        <div class="field col-12 title">
+            <div class="container text-center my-4">
+                <h2 class="bg-warning text-black p-2">Academic Year 2024-2025</h2>
+            </div>
+            <div class="grid p-fluid mt-">
+                <div class="field col-6">
+                    <span class="p-float-label">
+                        <input id="applicationNo" type="text" formControlName="applicationNo" pInputText />
+                        <label for="applicationNo">APPLICATION NO:</label>
+                    </span>
+                </div>
+                <div class="field col-6">
+                    <span class="p-float-label">
+                        <input id="counselingNo" type="text" formControlName="counselingNo" pInputText />
+                        <label for="counselingNo">AU COUNSELLING NO:</label>
+                    </span>
+                </div>
+                <div class="field col-6">
+                    <p-dropdown 
+                        [options]="admissionType" 
+                        formControlName="modeofadmission" 
+                        placeholder="MODE OF ADMISSION"
+                        optionLabel="name"  
+                        [showClear]="true">
+                    </p-dropdown>
+                </div>
+                <div class="field col-6">
+                    <p-dropdown 
+                        [options]=" scholarship" 
+                        formControlName="selectedScholarship" 
+                        placeholder="SCHOLARSHIP CATEGORY" 
+                        optionLabel="name" 
+                        [showClear]="true">
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button class="btn next-btn" type="button" (click)="goTologin()">Back</button>
+            <button class="btn submit-btn" type="submit" >Next</button>
+        </div>
+    </form>
 </div>
-
-<div class="grid p-fluid mt-4">
-    <div class="field col-12">
-        <div class="container text-center my-4">
-            <h2 class="bg-warning text-black p-2">Academic Year 2024-2025</h2>
-        </div>
-        <div class="field col-12">
-            <span class="p-float-label">
-                <input id="float-input" type="text" pInputText>
-                <label for="float-input">Application no:</label>
-            </span>
-        </div>
-        <div class="field col-12">
-            <span class="p-float-label">
-                <input id="float-input" type="text" pInputText>
-                <label for="float-input">AU COUNSELLING NO:</label>
-            </span>
-        </div>
-        <div class="field col-12">
-            <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select the course" [showClear]="true"></p-dropdown>
-        </div>
-    </div>
-
-
-</div>
-
-<div class="button-row">
-    <button class="btn next-btn">Back</button>
-    <button class="btn submit-btn"  (click)='goToStep2()'>Next</button>
-  </div>
-
-  </div>
