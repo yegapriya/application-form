@@ -14,7 +14,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { Step1ComponentRoutingModule } from './step1/step1-routing.module';
-import { step1Component } from "./step1/step1.component"; // Import the standalone component
+import { Step1Component } from "./step1/step1.component"; // Import the standalone component
 import { Ststep4Component } from './ststep4/ststep4.component';
 import { Step4RoutingModule } from "./ststep4/ststep4-routing.module";
 import { Step3Component } from './step3/step3.component';
@@ -41,17 +41,17 @@ import { Step2ComponentRoutingModule } from './step2/step2-routing.module';
     InputTextModule,
     InputGroupModule,
     InputGroupAddonModule,
+    ApplicationRoutingModule,
+    Step1ComponentRoutingModule,
+    Step4RoutingModule,
+    Step1Component,
+    Step2ComponentRoutingModule,
+    Step3Component,
+    Step3ComponentRoutingModule,
+    Step5RoutingModule ,
+    Step6RoutingModule,
+    LoginModule,
     ApplicationRoutingModule
-    //Step1ComponentRoutingModule,
-    //Step4RoutingModule,
-    //step1Component,
-    //Step2ComponentRoutingModule,
-    // Step3Component,
-    // Step3ComponentRoutingModule,
-    // Step5RoutingModule ,
-    // Step6RoutingModule,
-    // LoginModule,
-    // ApplicationRoutingModule
     
   ],
   // Remove step1Component from declarations

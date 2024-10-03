@@ -14,7 +14,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.3s ease; 
   }
 
   .btn:hover {
@@ -30,3 +30,6 @@
   .next-btn:hover {
     background-color: #d3cfcf; /* Darker green on hover */
   }
+.title{
+  margin-top: -20px;
+}
